@@ -1,11 +1,14 @@
-import React from 'react';
-import { Meta } from '@/components/Meta';
+import React, { Fragment } from 'react';
+import { Meta } from '@/components/shared/Meta';
+import { Header } from '@/components/shared/Header';
 
 const Home = () => (
-  <div>
+  <Fragment>
     <Meta title="Some awesome title" />
-    <div>Something here</div>
-  </div>
+    <Header>
+      Something
+    </Header>
+  </Fragment>
 );
 
 export default Home;

@@ -1,0 +1,21 @@
+@import '../../../css/shared/media.css';
+
+.Header {
+  padding: 4rem 2rem 2rem;
+  text-align: center;
+}
+
+.Breed {
+  position: relative;
+
+  &::after {
+    content: ' ';
+    background-color: var(--accent-color-light);
+    opacity: 0.5;
+    height: 15px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}

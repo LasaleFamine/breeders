@@ -1,0 +1,39 @@
+/** Breakpoints
+  *  Conversion Table (base 16px)
+  *  extraSmall = 30em → 480px
+  *  small = 48em → 768px
+  *  medium = 60em → 960px
+  *  large = 80em → 1280px
+  *  extraLarge = 100em → 1600px
+  */
+
+/* Mobile First Media Queries */
+
+@custom-media --from-extraSmall (min-width: env(--break-extra-small-em));
+@custom-media --from-small      (min-width: env(--break-small-em));
+@custom-media --from-medium     (min-width: env(--break-medium-em));
+@custom-media --from-large      (min-width: env(--break-large-em));
+@custom-media --from-extraLarge (min-width: env(--break-extra-large-em));
+
+/* Desktop First Media Queries */
+
+@custom-media --to-smallest     (max-width: 20em);
+@custom-media --to-extraSmall   (max-width: env(--break-extra-small-em));
+@custom-media --to-small        (max-width: env(--break-small-em));
+@custom-media --to-medium       (max-width: env(--break-medium-em));
+@custom-media --to-large        (max-width: env(--break-large-em));
+@custom-media --to-extraLarge   (max-width: env(--break-extra-large-em));
+
+/* Orientation Media Queries */
+
+@custom-media --landscape       (orientation: landscape);
+@custom-media --portrait        (orientation: portrait);
+
+/* Color Scheme Media Queries */
+
+@custom-media --dark-scheme     (prefers-color-scheme: dark);
+@custom-media --light-scheme    (prefers-color-scheme: light);
+
+/* Motion Media Queries */
+
+@custom-media --no-motion       (prefers-reduced-motion: reduce);

@@ -1,0 +1,24 @@
+.CardContainer {
+  padding: 2rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: env(--shadow-base);
+  transition: box-shadow 300ms ease-in;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: env(--shadow-mid);
+  }
+
+  &[data-pointer='true'] {
+    cursor: pointer;
+  }
+
+  &[data-centered='true'] {
+    align-items: center;
+    justify-content: center;
+  }
+}

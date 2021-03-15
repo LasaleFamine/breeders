@@ -14,8 +14,8 @@
       "\\.(css)$": "identity-obj-proxy",
       "\\.svg": "<rootDir>/.jest/__mocks__/svgr-mock.ts",
       "^jest-helpers/(.*)": "<rootDir>/.jest/$1",
-      "^components/(.*)": "<rootDir>/src/components/$1",
-      "^core/(.*)": "<rootDir>/src/core/$1"
+      "@/components/(.*)": "<rootDir>/src/components/$1",
+      "@/core/(.*)": "<rootDir>/src/core/$1"
     },
     "setupFiles": [
       "<rootDir>/.jest/env.ts",
@@ -30,7 +30,7 @@
     ],
     "globals": {
       "ts-jest": {
-        "tsConfig": "tsconfig.test.json"
+        "tsconfig": "tsconfig.test.json"
       }
     }
   },
@@ -97,6 +97,7 @@
     "postcss-normalize": "^9.0.0",
     "postcss-preset-env": "6.7.0",
     "postcss-responsive-type": "^1.0.0",
+    "react-hooks-testing-library": "0.6.0",
     "react-test-renderer": "^17.0.1",
     "stylelint": "^13.12.0",
     "stylelint-config-oval": "^1.0.6",

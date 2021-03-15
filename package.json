@@ -54,7 +54,8 @@
     "start": "next start",
     "test": "jest",
     "ts:check": "tsc --noEmit",
-    "get-base-images": "ts-node -O '{\"module\":\"commonjs\"}' scripts/get-base-images"
+    "get-base-images": "ts-node -O '{\"module\":\"commonjs\"}' scripts/get-base-images",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@native-elements/core": "^1.5.4",

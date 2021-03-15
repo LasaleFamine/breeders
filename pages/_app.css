@@ -5,7 +5,8 @@ html {
 
 body {
   margin: 0;
-  height: 100%;
+  min-height: 100%;
+  min-width: 320px;
   background-color: var(--color-10);
 }
 
@@ -26,11 +27,15 @@ body {
 
 ::-webkit-scrollbar-thumb {
   border-radius: 4px;
-  background: hsl(env(--secondary-70));
+  background: var(--accent-color-light);
 }
 
 /* Handle Hover */
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(env(--primary-100));
+  background: var(--accent-color);
+}
+
+[data-whatintent='mouse'] :focus {
+  outline: 0;
 }

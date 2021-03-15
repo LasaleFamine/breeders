@@ -11,7 +11,7 @@ export const EmptyLayout = ({
   ...attributes
 }: IProps) => (
   <main className={clsx(style.EmptyLayout, className)} {...attributes}>
-    <Container size="medium">
+    <Container size="large">
       {children}
     </Container>
   </main>

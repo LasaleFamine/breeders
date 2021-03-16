@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.1.0](https://github.com/LasaleFamine/breeders/compare/v0.0.1...v0.1.0) (2021-03-16)
+
+
+### Features
+
+* added dockerfile support ([0ba10ec](https://github.com/LasaleFamine/breeders/commit/0ba10eced4c301826d8410bb9debc1cdaefa200d))
+
 ### 0.0.1 (2021-03-16)
 
 

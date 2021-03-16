@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/LasaleFamine/breeders/compare/v0.1.1...v0.1.2) (2021-03-16)
+
+
+### Features
+
+* added revalidating feedback ([8b284e6](https://github.com/LasaleFamine/breeders/commit/8b284e6e4b4a7c5bb6f2cbf0dbfce6b651e4bbda))
+
 ### [0.1.1](https://github.com/LasaleFamine/breeders/compare/v0.1.0...v0.1.1) (2021-03-16)
 
 

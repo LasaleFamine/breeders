@@ -57,15 +57,16 @@ const BreedDetail = () => {
       <article className={style.MainContainer}>
         <div className={style.ImageContainer}>
           {currentPhoto && (
-          <CustomImage
-            data-cy="CurrentImage"
-            objectFit="cover"
-            layout="fill"
-            data-full-url={currentPhoto.image}
-            src={currentPhoto.image}
-            alt={currentPhoto.name}
-          />
+            <CustomImage
+              data-cy="CurrentImage"
+              objectFit="cover"
+              layout="fill"
+              data-full-url={currentPhoto.image}
+              src={currentPhoto.image}
+              alt={currentPhoto.name}
+            />
           )}
+          {isValidating && <img width={20} height={30} className={style.ImageLoader} src="/svg/loader-img.svg" alt="" />}
         </div>
         <div className={style.Actions}>
           <button data-cy="FetchNewButton" disabled={isValidating} className={style.Item} type="button" onClick={fetchNewImge}>

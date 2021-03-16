@@ -46,6 +46,13 @@
   }
 }
 
+.ImageLoader {
+  z-index: 1;
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+}
+
 .Actions {
   display: flex;
   flex-direction: column;

@@ -20,6 +20,10 @@ export const useRandomImage = (breedTag?: string) => {
     };
   }
 
+  if (data.status === 'error') {
+    throw new Error(data.message);
+  }
+
   return {
     data: {
       image: data.message,

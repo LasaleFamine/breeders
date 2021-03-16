@@ -11,6 +11,7 @@ import style from '@/css/pages/breed/breed.module.css';
 import Link from 'next/link';
 import { CustomImage } from '@/components/shared/CustomImage';
 import { Meta } from '@/components/shared/Meta';
+import { ErrorBoundary } from '@/components/shared/ErrorBoundary/ErrorBoundary';
 
 const BreedDetail = () => {
   const router = useRouter();
@@ -88,7 +89,15 @@ const Breed = () => (
   <div>
     {!isServer ? (
       <Suspense fallback="Loading">
-        <BreedDetail />
+        <ErrorBoundary fallback={(
+          <Fragment>
+            <h2>Could not fetch this breedz.</h2>
+            <Link href="/"><a href="/">Go back.</a></Link>
+          </Fragment>
+        )}
+        >
+          <BreedDetail />
+        </ErrorBoundary>
       </Suspense>
     ) : null}
   </div>

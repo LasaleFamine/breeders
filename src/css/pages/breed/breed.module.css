@@ -1,19 +1,90 @@
+@import '../../../css/shared/media.css';
+
 .Header {
   display: flex;
   align-items: center;
   margin-bottom: 2rem;
 
-  & h1 {
+  & > h1 {
     margin-bottom: 0;
-    margin-left: 1rem;
     text-transform: capitalize;
+
+    @media (--from-medium) {
+      margin-left: 1rem;
+    }
+  }
+
+  & > a {
+    display: none;
+
+    @media (--from-medium) {
+      display: block;
+    }
+  }
+}
+
+.MainContainer {
+
+  @media (--from-medium) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
   }
 }
 
 .ImageContainer {
   max-width: 600px;
+  height: 400px;
   position: relative;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: env(--shadow-mid);
+
+  @media (--from-medium) {
+    margin: initial;
+  }
+}
+
+.Actions {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+
+  & .Item + .Item {
+    margin-top: 1rem;
+  }
+
+  @media (--from-medium) {
+    margin-top: 0;
+  }
+}
+
+.Latest {
+  margin-top: 2rem;
+
+  & h6 {
+    margin-bottom: 1rem;
+  }
+
+  @media (--from-medium) {
+    margin-top: auto;
+  }
+}
+
+.LatestPhotos {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 0.5rem;
+
+  & > div {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  & img {
+    cursor: pointer;
+  }
 }

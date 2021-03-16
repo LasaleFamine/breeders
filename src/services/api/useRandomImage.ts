@@ -5,8 +5,13 @@ type APIRandomImageResponse = {
   status: 'success' | 'error';
 }
 
+export type RandomPhoto = {
+  image: string;
+  name?: string;
+}
+
 export const useRandomImage = (breedTag?: string) => {
-  const { data, ...rest } = useHttpClient<APIRandomImageResponse>(breedTag && `breed/${breedTag}/images/random`, { onFocus: false });
+  const { data, ...rest } = useHttpClient<APIRandomImageResponse>(breedTag && `breed/${breedTag.replace('-', '/')}/images/random`, { onFocus: false });
 
   if (!data) {
     return {

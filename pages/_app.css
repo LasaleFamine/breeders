@@ -42,6 +42,12 @@ a[ne-button][data-kind='round-small'] {
   --ne-button-border-radius: 50%;
 }
 
-[data-whatintent='mouse'] :focus {
-  outline: 0;
+button > img {
+  margin-left: 0.5rem;
 }
+
+[data-whatintent='mouse'] *:focus,
+[data-whatintent='touch'] *:focus {
+  outline: none;
+}
+

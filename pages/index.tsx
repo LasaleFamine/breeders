@@ -41,9 +41,9 @@ const List = () => {
       </div>
       <div className={style.ListContainer} data-count={filteredList.length}>
         {filteredList.map(item => (
-          <Link href={`/${item.tag}`}>
+          <Link key={item.previewUrl} href={`/${item.tag}`}>
             <a href={`/${item.tag}`}>
-              <CardContainer key={item.previewUrl} backgroundImage={item.previewUrl}>
+              <CardContainer backgroundImage={item.previewUrl}>
                 <div className={style.ListItem}>
                   <h6 className={style.ListItemTitle}>
                     {item.name}

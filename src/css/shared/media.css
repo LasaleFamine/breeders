@@ -9,20 +9,20 @@
 
 /* Mobile First Media Queries */
 
-@custom-media --from-extraSmall (min-width: env(--break-extra-small-em));
-@custom-media --from-small      (min-width: env(--break-small-em));
-@custom-media --from-medium     (min-width: env(--break-medium-em));
-@custom-media --from-large      (min-width: env(--break-large-em));
-@custom-media --from-extraLarge (min-width: env(--break-extra-large-em));
+@custom-media --from-extraSmall (min-width: 30em);
+@custom-media --from-small      (min-width: 48em);
+@custom-media --from-medium     (min-width: 60em);
+@custom-media --from-large      (min-width: 80em);
+@custom-media --from-extraLarge (min-width: 100em);
 
 /* Desktop First Media Queries */
 
 @custom-media --to-smallest     (max-width: 20em);
-@custom-media --to-extraSmall   (max-width: env(--break-extra-small-em));
-@custom-media --to-small        (max-width: env(--break-small-em));
-@custom-media --to-medium       (max-width: env(--break-medium-em));
-@custom-media --to-large        (max-width: env(--break-large-em));
-@custom-media --to-extraLarge   (max-width: env(--break-extra-large-em));
+@custom-media --to-extraSmall   (max-width: 30em);
+@custom-media --to-small        (max-width: 48em);
+@custom-media --to-medium       (max-width: 60em);
+@custom-media --to-large        (max-width: 80em);
+@custom-media --to-extraLarge   (max-width: 100em);
 
 /* Orientation Media Queries */
 

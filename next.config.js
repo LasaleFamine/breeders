@@ -9,5 +9,9 @@ module.exports = () => {
     enabled: process.env.ANALYZE === 'true',
   });
 
-  return withBundleAnalyzer();
+  return withBundleAnalyzer({
+    images: {
+      domains: ['images.dog.ceo'],
+    },
+  });
 };

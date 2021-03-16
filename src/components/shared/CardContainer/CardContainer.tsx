@@ -23,8 +23,7 @@ export const CardContainer = ({
   >
     {backgroundImage ? (
       <CustomImage
-        width="300px"
-        height="300px"
+        layout="fill"
         src={backgroundImage}
       />
     ) : null}

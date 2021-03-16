@@ -6,6 +6,7 @@ import style from './custom-image.module.css';
 export const CustomImage: typeof Image = ({
   src,
   onLoad,
+  ...rest
 }) => {
   const [onLoadCount, setOnloadCount] = useState(0);
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -26,12 +27,12 @@ export const CustomImage: typeof Image = ({
       <Image
         onLoad={(e) => {
           setOnloadCount(prev => prev + 1);
-          if (onLoad) onLoad(e);
+          if (onLoad) { onLoad(e); }
         }}
         src={src}
-        layout="fill"
         objectFit="cover"
         quality={100}
+        {...rest}
       />
     </Fragment>
   );

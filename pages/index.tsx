@@ -9,8 +9,7 @@ import { CardContainer } from '@/components/shared/CardContainer';
 import style from '@/css/pages/index.module.css';
 import { useDebounce } from 'src/core/helpers/useDebounce';
 import Skeleton from 'react-loading-skeleton';
-
-const isServer = typeof window === 'undefined';
+import { isServer } from '@/core/helpers/is-server';
 
 const List = () => {
   const { data } = useBreeds();

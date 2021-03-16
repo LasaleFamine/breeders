@@ -36,6 +36,12 @@ body {
   background: var(--accent-color);
 }
 
+a[ne-button][data-kind='round-small'] {
+  --ne-button-y-padding: 0.5rem;
+  --ne-button-x-padding: 0.5rem;
+  --ne-button-border-radius: 50%;
+}
+
 [data-whatintent='mouse'] :focus {
   outline: 0;
 }

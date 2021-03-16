@@ -3,4 +3,11 @@ import { fetcher } from './fetcher';
 
 const API_BASE_URL = 'https://dog.ceo/api/';
 
-export const useHttpClient = <D>(route: string) => useSWR<D>(`${API_BASE_URL}${route}`, fetcher, { suspense: true });
+type Opts = {
+  onFocus: boolean;
+}
+
+export const useHttpClient = <D>(route?: string, opts: Opts = { onFocus: true }) => useSWR<D>(route ? `${API_BASE_URL}${route}` : null, fetcher, {
+  suspense: true,
+  revalidateOnFocus: opts.onFocus,
+});

@@ -1,0 +1,19 @@
+.Header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  & h1 {
+    margin-bottom: 0;
+    margin-left: 1rem;
+    text-transform: capitalize;
+  }
+}
+
+.ImageContainer {
+  max-width: 600px;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: env(--shadow-mid);
+}

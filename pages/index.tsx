@@ -60,7 +60,7 @@ const List = () => {
 
 const Home = () => (
   <Fragment>
-    <Meta title="Some awesome title" />
+    <Meta />
     <Header />
     {!isServer && (
       <Suspense fallback={(

@@ -94,3 +94,5 @@ coverage
 cypress/videos
 
 # End of https://www.gitignore.io/api/linux,macos,windows,visualstudiocode
+
+.vercel

@@ -10,6 +10,7 @@ import { isServer } from '@/core/helpers/is-server';
 import style from '@/css/pages/breed/breed.module.css';
 import Link from 'next/link';
 import { CustomImage } from '@/components/shared/CustomImage';
+import { Meta } from '@/components/shared/Meta';
 
 const BreedDetail = () => {
   const router = useRouter();
@@ -37,6 +38,7 @@ const BreedDetail = () => {
 
   return (
     <Fragment>
+      <Meta title={data?.name?.toUpperCase() ?? 'Loading...'} />
       <header className={style.Header}>
         <div className={style.Back}>
           <Link href="/">

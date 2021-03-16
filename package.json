@@ -13,7 +13,7 @@
     "moduleNameMapper": {
       "\\.(css)$": "identity-obj-proxy",
       "\\.svg": "<rootDir>/.jest/__mocks__/svgr-mock.ts",
-      "^jest-helpers/(.*)": "<rootDir>/.jest/$1",
+      "@/jest-helpers/(.*)": "<rootDir>/.jest/$1",
       "@/components/(.*)": "<rootDir>/src/components/$1",
       "@/core/(.*)": "<rootDir>/src/core/$1"
     },

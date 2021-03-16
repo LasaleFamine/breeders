@@ -1,6 +1,7 @@
 import React, {
   Fragment,
   Suspense,
+  useMemo,
   useState,
 } from 'react';
 import { useRouter } from 'next/router';
@@ -13,8 +14,10 @@ import { CustomImage } from '@/components/shared/CustomImage';
 const BreedDetail = () => {
   const router = useRouter();
   const { data, revalidate, isValidating } = useRandomImage(router.query.breed as string);
-  const [selectedPhoto, setSelectedPhoto] = useState<RandomPhoto | undefined>(() => data);
+  const [selectedPhoto, setSelectedPhoto] = useState<RandomPhoto | undefined>(data);
   const [latestPhotos, setLatestPhotos] = useState<RandomPhoto[]>([]);
+
+  const currentPhoto = useMemo(() => selectedPhoto ?? data, [selectedPhoto, data]);
 
   const fetchNewImge = async () => {
     const currentImage = { ...data };
@@ -35,7 +38,7 @@ const BreedDetail = () => {
   return (
     <Fragment>
       <header className={style.Header}>
-        <div>
+        <div className={style.Back}>
           <Link href="/">
             <a href="/" ne-button="true" data-kind="round-small">
               <img width="30" height="30" src="/svg/left-arrow.svg" alt="" />
@@ -46,16 +49,15 @@ const BreedDetail = () => {
       </header>
       <article className={style.MainContainer}>
         <div className={style.ImageContainer}>
-          {data && !selectedPhoto && <CustomImage objectFit="cover" layout="fill" src={data.image} alt={data.name} />}
-          {selectedPhoto && <CustomImage objectFit="cover" layout="fill" src={selectedPhoto.image} alt={selectedPhoto.name} />}
+          {currentPhoto && <CustomImage objectFit="cover" layout="fill" src={currentPhoto.image} alt={currentPhoto.name} />}
         </div>
         <div className={style.Actions}>
           <button disabled={isValidating} className={style.Item} type="button" onClick={fetchNewImge}>
             Fetch new
             <img width="20" height="20" src="/svg/refresh.svg" alt="" />
           </button>
-          <button className={style.Item} type="button" onClick={async () => navigator.clipboard.writeText(data?.image ?? '')}>Copy URL</button>
-          <a className={style.Item} href={data?.image} target="_blank" rel="noreferrer noopener" ne-button="true">Open in new tab</a>
+          <button className={style.Item} type="button" onClick={async () => navigator.clipboard.writeText(currentPhoto?.image ?? '')}>Copy URL</button>
+          <a className={style.Item} href={currentPhoto?.image} target="_blank" rel="noreferrer noopener" ne-button="true">Open in new tab</a>
           {latestPhotos.length > 0 && (
             <div className={style.Latest}>
               <h6>Photo history</h6>

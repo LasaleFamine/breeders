@@ -2,7 +2,7 @@ import React from 'react';
 import '@native-elements/core';
 import '@/css/theme/light-theme.css';
 
-import './_app.css';
+import '@/css/_app.css';
 import 'what-input';
 import { EmptyLayout } from '@/components/layouts/EmptyLayout';
 

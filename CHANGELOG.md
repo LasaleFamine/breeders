@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.1](https://github.com/LasaleFamine/breeders/compare/v0.1.0...v0.1.1) (2021-03-16)
+
+
+### Bug Fixes
+
+* error handling for unknown breed ([1416ef7](https://github.com/LasaleFamine/breeders/commit/1416ef7da3d518d314d8036d7c1b7084fdac348c))
+
 ## [0.1.0](https://github.com/LasaleFamine/breeders/compare/v0.0.1...v0.1.0) (2021-03-16)
 
 

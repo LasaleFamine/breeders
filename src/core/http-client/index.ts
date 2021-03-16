@@ -8,7 +8,9 @@ type Opts = {
   suspense?: boolean;
 }
 
-export const useHttpClient = <D>(route?: string, opts: Opts = { onFocus: true, suspense: true }) => useSWR<D>(route ? `${API_BASE_URL}${route}` : null, fetcher, {
-  suspense: opts.suspense,
-  revalidateOnFocus: opts.onFocus,
-});
+export const useHttpClient = <D>(route?: string, opts: Opts = { onFocus: true, suspense: true }) => useSWR<D>(
+  route ? `${API_BASE_URL}${route}` : null, fetcher, {
+    suspense: opts.suspense,
+    revalidateOnFocus: opts.onFocus,
+  },
+);

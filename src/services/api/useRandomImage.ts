@@ -3,6 +3,7 @@ import { useHttpClient } from '@/core/http-client';
 type APIRandomImageResponse = {
   message: string;
   status: 'success' | 'error';
+  code: number;
 }
 
 export type RandomPhoto = {
@@ -18,10 +19,6 @@ export const useRandomImage = (breedTag?: string) => {
       data,
       ...rest,
     };
-  }
-
-  if (data.status === 'error') {
-    throw new Error(data.message);
   }
 
   return {

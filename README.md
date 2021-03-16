@@ -1,6 +1,6 @@
-# BREEDERS <!-- omit from toc -->
+# BREEDERS
 
-<small>A totally random name...</small>
+A totally random name...
 
 > Time to choose your favourite breed 🐶
 
@@ -43,6 +43,22 @@ Tests are written with `jest`. Run:
 ```bash
 yarn test # or with --coverage
 ```
+
+#### Cypress
+
+E2E testing suite is written in [Cypress](https://cypress.io) and can be run using the headless run or the Cypress control panel:
+
+##### Headeless
+```bash
+yarn e2e
+```
+
+##### Control panel
+```bash
+yarn e2e:open
+```
+
+> NOTE: bot commands will spin up a server on dev mode.
 
 ### Get base images
 

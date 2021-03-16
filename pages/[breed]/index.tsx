@@ -15,7 +15,11 @@ import { ErrorBoundary } from '@/components/shared/ErrorBoundary/ErrorBoundary';
 
 const BreedDetail = () => {
   const router = useRouter();
-  const { data, revalidate, isValidating } = useRandomImage(router.query.breed as string);
+  const {
+    data,
+    revalidate,
+    isValidating,
+  } = useRandomImage(router.query.breed as string);
   const [selectedPhoto, setSelectedPhoto] = useState<RandomPhoto | undefined>(data);
   const [latestPhotos, setLatestPhotos] = useState<RandomPhoto[]>([]);
 
@@ -43,7 +47,7 @@ const BreedDetail = () => {
       <header className={style.Header}>
         <div className={style.Back}>
           <Link href="/">
-            <a href="/" ne-button="true" data-kind="round-small">
+            <a data-cy="BackButton" href="/" ne-button="true" data-kind="round-small">
               <img width="30" height="30" src="/svg/left-arrow.svg" alt="" />
             </a>
           </Link>
@@ -52,15 +56,24 @@ const BreedDetail = () => {
       </header>
       <article className={style.MainContainer}>
         <div className={style.ImageContainer}>
-          {currentPhoto && <CustomImage objectFit="cover" layout="fill" src={currentPhoto.image} alt={currentPhoto.name} />}
+          {currentPhoto && (
+          <CustomImage
+            data-cy="CurrentImage"
+            objectFit="cover"
+            layout="fill"
+            data-full-url={currentPhoto.image}
+            src={currentPhoto.image}
+            alt={currentPhoto.name}
+          />
+          )}
         </div>
         <div className={style.Actions}>
-          <button disabled={isValidating} className={style.Item} type="button" onClick={fetchNewImge}>
+          <button data-cy="FetchNewButton" disabled={isValidating} className={style.Item} type="button" onClick={fetchNewImge}>
             Fetch new
             <img width="20" height="20" src="/svg/refresh.svg" alt="" />
           </button>
-          <button className={style.Item} type="button" onClick={async () => navigator.clipboard.writeText(currentPhoto?.image ?? '')}>Copy URL</button>
-          <a className={style.Item} href={currentPhoto?.image} target="_blank" rel="noreferrer noopener" ne-button="true">Open in new tab</a>
+          <button data-cy="CopyButton" className={style.Item} type="button" onClick={async () => navigator.clipboard.writeText(currentPhoto?.image ?? '')}>Copy URL</button>
+          <a data-cy="OpenNewTabButton" className={style.Item} href={currentPhoto?.image} target="_blank" rel="noreferrer noopener" ne-button="true">Open in new tab</a>
           {latestPhotos.length > 0 && (
             <div className={style.Latest}>
               <h6>Photo history</h6>
@@ -68,6 +81,7 @@ const BreedDetail = () => {
                 {latestPhotos.map(photo => (
                   <div key={photo.image}>
                     <CustomImage
+                      data-cy="HistoryImage"
                       alt={photo.name}
                       onClick={() => setSelectedPhoto(photo)}
                       width={100}

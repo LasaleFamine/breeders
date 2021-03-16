@@ -37,9 +37,9 @@ const List = () => {
   return (
     <Fragment>
       <div className={style.Actions}>
-        <input placeholder="Search" type="text" onChange={onChangeSearch} />
+        <input data-cy="Search" placeholder="Search" type="text" onChange={onChangeSearch} />
       </div>
-      <div className={style.ListContainer} data-count={filteredList.length}>
+      <div data-cy="List" className={style.ListContainer} data-count={filteredList.length}>
         {filteredList.map(item => (
           <Link key={item.previewUrl} href={`/${item.tag}`}>
             <a href={`/${item.tag}`}>

@@ -1,5 +1,7 @@
 # BREEDERS <!-- omit from toc -->
 
+<small>A totally random name...</small>
+
 > Time to choose your favourite breed 🐶
 
 ## What
@@ -48,6 +50,14 @@ A script is available to run for downloading the base images from the dog.ceo AP
 
 ```bash
 yarn get-base-images
+```
+
+## Docker
+
+`Dockerfile` is provided to run the application in a production fashion way, exposing the project on the port `3000` of the host. Just run:
+
+```bash
+yarn docker
 ```
 
 ## Release

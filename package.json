@@ -50,6 +50,7 @@
     "lint": "eslint . --ext ts,tsx",
     "get-base-images": "ts-node -O '{\"module\":\"commonjs\"}' scripts/get-base-images",
     "release": "git pull && standard-version && git push --follow-tags --no-verify",
+    "docker": "docker build -t breeders . && docker run --name BREEDERS_CONTAINER -p 0.0.0.0:3000:3000 breeders",
     "prepare": "husky install"
   },
   "dependencies": {

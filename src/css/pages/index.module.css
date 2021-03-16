@@ -1,0 +1,28 @@
+.ListContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: 250px;
+  grid-gap: 1rem;
+}
+
+.ListItem {
+  display: block;
+  z-index: 1;
+}
+
+.ListItemTitle {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  background-color: var(--accent-color-light);
+  color: #fff;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.Actions {
+  margin-bottom: 2rem;
+}

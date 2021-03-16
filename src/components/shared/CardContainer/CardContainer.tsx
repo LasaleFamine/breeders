@@ -1,7 +1,7 @@
-import React, { useCallback } from 'react';
-import Image from 'next/image';
+import React from 'react';
 import clsx from 'clsx';
 import style from './card-container.module.css';
+import { CustomImage } from '../CustomImage';
 
 interface IProps {
   children: React.ReactNode;
@@ -16,33 +16,18 @@ export const CardContainer = ({
   className,
   backgroundImage,
   ...other
-}: IProps) => {
-  const onKeyDown = useCallback((event: React.KeyboardEvent<HTMLDivElement>) => {
-    if (event.key === 'ENTER' && onClick) {
-      event.preventDefault();
-      onClick();
-    }
-  }, [onClick]);
-
-  return (
-    <div
-      {...other}
-      tabIndex={0}
-      role="button"
-      data-pointer={Boolean(onClick)}
-      onClick={onClick}
-      className={clsx(style.CardContainer, className)}
-      onKeyDown={onKeyDown}
-    >
-      {backgroundImage ? (
-        <Image
-          layout="fill"
-          objectFit="cover"
-          quality={100}
-          src={backgroundImage}
-        />
-      ) : null}
-      {children}
-    </div>
-  );
-};
+}: IProps) => (
+  <div
+    {...other}
+    className={clsx(style.CardContainer, className)}
+  >
+    {backgroundImage ? (
+      <CustomImage
+        width="300px"
+        height="300px"
+        src={backgroundImage}
+      />
+    ) : null}
+    {children}
+  </div>
+);

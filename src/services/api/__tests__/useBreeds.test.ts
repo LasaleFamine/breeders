@@ -27,15 +27,19 @@ describe('useBreeds', () => {
       list: [{
         name: 'goku ssj1',
         previewUrl: '/goku-ssj1.jpg',
+        tag: 'goku-ssj1',
       }, {
         name: 'goku ssj2',
         previewUrl: '/goku-ssj2.jpg',
+        tag: 'goku-ssj2',
       }, {
         name: 'vegeta ssj1',
         previewUrl: '/vegeta-ssj1.jpg',
+        tag: 'vegeta-ssj1',
       }, {
         name: 'mrsatan',
         previewUrl: '/mrsatan.jpg',
+        tag: 'mrsatan',
       }],
     });
   });

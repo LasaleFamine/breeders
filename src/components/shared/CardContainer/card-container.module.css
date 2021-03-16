@@ -1,13 +1,13 @@
 .CardContainer {
+  display: flex;
+  height: 100%;
   padding: 2rem;
   border-radius: 1rem;
-  display: flex;
   flex-direction: column;
   box-shadow: env(--shadow-base);
   transition: box-shadow 300ms ease-in;
   position: relative;
   overflow: hidden;
-  cursor: pointer;
 
   &:hover {
     box-shadow: env(--shadow-mid);
